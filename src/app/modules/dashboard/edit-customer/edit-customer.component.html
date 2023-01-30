@@ -1,1 +1,159 @@
-<p>edit-customer works!</p>
+<div class="p-3">
+    <h3 class="py-4  mb-4 border-bottom border-light-subtle">Edit customer</h3>
+
+    <form class="w-50 " [formGroup]="customerForm" (ngSubmit)="submitForm()">
+        <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-4 pt-0">Customer type</legend>
+            <div class="row col-sm">
+                <div class="col-3 form-check">
+                    <input class="form-check-input" formControlName="customerType" type="radio" name="type"
+                        value="Business" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                        Business
+                    </label>
+                </div>
+                <div class="col-4 form-check">
+                    <input class="form-check-input" formControlName="customerType" type="radio" name="type"
+                        value="Individual">
+                    <label class="form-check-label" for="gridRadios2">
+                        Individual
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <div class="row mb-3" formGroupName="primaryContact">
+            <label for="contact" class="col-sm-4 col-form-label">Primary contact</label>
+            <div class="row col-sm gap-3">
+                <select class="col-sm border form-select bg-light rounded-3 text-muted " formControlName="title" name=""
+                    id="">
+                    <option value="Mr" selected>Mr.</option>
+                    <option value="Ms" class="">Ms.</option>
+                </select>
+                <input type="text" class="form-control col-sm" formControlName="firstName">
+                <input type="text" class="form-control col-sm" formControlName="lastName">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="companyName" class="col-sm-4 col-form-label ">Company name</label>
+            <div class="row col-sm-7">
+                <input type="text" class="form-control text-uppercase " formControlName="companyName">
+            </div>
+        </div>
+        <div class="row mb-3 align-items-baseline">
+            <label for="displayName" class="col-sm-4 col-form-label ">Customer Display <br> name*</label>
+            <select class="col-sm form-select border bg-light text-muted" formControlName="customerDisplayName"
+                style="height: 40px" name="" id="">
+                <option value="Company name" selected>Company name</option>
+                <option value="thopate farms" class="">thopate farms</option>
+            </select>
+        </div>
+        <div class="row mb-3">
+            <label for="email" class="col-sm-4 col-form-label ">Customer Email</label>
+            <div class="row col-sm-7">
+                <input type="email" class="form-control " formControlName="email">
+            </div>
+        </div>
+        <div class="row mb-3" formGroupName="phone">
+            <label for="phone" class="col-sm-4 col-form-label ">Customer Phone</label>
+            <div class="row col-sm-7 gap-3">
+                <input type="tel " class="form-control col-sm " placeholder="Work phone" formControlName="work">
+                <input type="tel" class="form-control  col-sm " placeholder="Mobile" formControlName="mobile">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="website" class="col-sm-4 col-form-label ">Website</label>
+            <div class="row col-sm-7">
+                <input type="text" class="form-control" formControlName="website">
+            </div>
+        </div>
+        <div>
+            <!-- <button class="btn-primary" type="submit">save</button> -->
+        </div>
+    </form>
+    <div class=" w-75 mt-5 ">
+        <ul class="nav mb-3  border-top border-bottom border-light-subtle py-2">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Other Details</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" routerLink="/app/dashboard/address">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" routerLink="/app/dashboard/contact-persons">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ">Custom fields</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Reporting Tags</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link ">Remarks</a>
+            </li>
+        </ul>
+        <div class="tab-content w-50">
+            <div class="hstack gap-3 mb-3">
+                <button class="btn btn-primary ">save</button>
+                <button class="btn btn-secondary ">cancel</button>
+            </div>
+            <form action="
+            ">
+                <div class="row mb-3">
+                    <label for="companyName" class="col-sm-5 col-form-label ">Attention</label>
+                    <div class=" col-sm">
+                        <input type="text" class="form-control text-uppercase " formControlName="companyName">
+                    </div>
+                </div>
+                <div class="row mb-3 col-sm gap-3">
+                    <label for="displayName" class="col-sm-5 col-form-label ">Country/Region</label>
+                    <select class="col-sm form-select  border bg-light text-muted " formControlName="title" name=""
+                        id="">
+                        <option value="Mr" selected>Indian</option>
+                        <option value="Ms" class="">Australia</option>
+                    </select>
+                </div>
+                <div class="row mb-3">
+                    <label for="AddressLine" class="form-label col-sm-4">Address</label>
+                    <div class="col-sm">
+                        <textarea class="form-control mb-3   " rows="3" placeholder="Street1"> </textarea>
+                        <textarea class="form-control " rows="3" placeholder="Street2"></textarea>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="companyName" class="col-sm-4 col-form-label ">City</label>
+                    <div class=" col-sm">
+                        <input type="text" class="form-control text-uppercase " formControlName="companyName">
+                    </div>
+                </div>
+                <div class="row col-sm gap-3 mb-3">
+                    <label for="displayName" class="col-sm-4 col-form-label ">State</label>
+                    <select class="col-sm  form-select row border bg-light rounded-3 text-muted "
+                        formControlName="title" name="" id="">
+                        <option value="Mr" selected>Maharashtra</option>
+                        <option value="Ms" class="">Karnataka</option>
+                    </select>
+                </div>
+                <div class="row mb-3">
+                    <label for="companyName" class="col-sm-4 col-form-label ">Zip code</label>
+                    <div class="row col-sm">
+                        <input type="text" class="form-control text-uppercase " formControlName="companyName">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="companyName" class="col-sm-4 col-form-label ">Phone</label>
+                    <div class="row col-sm">
+                        <input type="tel" class="form-control text-uppercase " formControlName="companyName">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="companyName" class="col-sm-4 col-form-label ">Fax</label>
+                    <div class="row col-sm">
+                        <input type="fax" class="form-control text-uppercase " formControlName="companyName">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
