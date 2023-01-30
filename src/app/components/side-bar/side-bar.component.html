@@ -1,1 +1,68 @@
-<p>side-bar works!</p>
+<div class="side-bar w-100 h-100" style="background: #1b263b; color: white">
+  <div class="app-name h4 py-2 ps-3 pe-1 my-auto" style="background: #0d1b2a">Books</div>
+  <div
+    class="side-bar-main-sections py-2 ps-2 pe-1"
+    style="font-size: 0.9rem"
+  >
+    <div class="dashboard py-2 d-flex align-items-center">
+      <i class="fa-solid fa-clock me-2 ps-2"></i>Dashboard
+    </div>
+    <div class="items py-2 d-flex align-items-center">
+      <i class="fa-solid fa-bag-shopping me-2 ps-2"></i>Items
+    </div>
+    <div class="banking py-2 d-flex align-items-center">
+      <i class="fa-solid fa-building-columns me-2 ps-2"></i>Banking
+    </div>
+  </div>
+  <div
+    class="side-bar-other-sections-block ps-2 pe-1"
+    style="font-size: 0.9rem"
+  >
+    <div class="sales">
+      <div
+        class="w-100 py-2 sales-btn rounded-2 mb-1"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseExample1"
+        aria-expanded="false"
+        aria-controls="collapseExample1"
+      >
+        <i class="fa-solid fa-cart-shopping me-2 ps-2"></i>
+        Sales
+      </div>
+      <div class="collapse" id="collapseExample1">
+        <div class="card card-body p-0" style="background: inherit">
+          <div class="options py-2 ps-4 mb-1 rounded-2">Customer</div>
+          <div class="options py-2 ps-4 mb-1 rounded-2">Sales Orders</div>
+          <div class="options py-2 ps-4 mb-1 rounded-2">Invoices</div>
+          <div class="options py-2 ps-4 mb-1 rounded-2">Payment Links</div>
+          <div class="options py-2 ps-4 mb-1 rounded-2">Payent Received</div>
+          <div class="options py-2 ps-4 mb-1 rounded-2">Recurring Invoice</div>
+          <div class="options py-2 ps-4 mb-1 rounded-2">Credit Notes</div>
+        </div>
+      </div>
+    </div>
+    <!-- Purchase -->
+    <div class="Purchases w-100 py-2">
+      <div
+        class="w-100 py-2 purchase-btn rounded-2 mb-1"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapseExample2"
+        aria-expanded="false"
+        aria-controls="collapseExample2"
+        click=""
+      >
+        <i class="fa-solid fa-bag-shopping me-2 ps-2"></i>
+        Purchases
+      </div>
+      <div class="collapse" id="collapseExample2">
+        <div class="card card-body p-0" style="background: inherit">
+          <div class="options py-2 ps-4 mb-1 rounded-2">Customer</div>
+          <div class="options py-2 ps-4 mb-1 rounded-2">Sales Orders</div>
+          <div class="options py-2 ps-4 mb-1 rounded-2">Invoices</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

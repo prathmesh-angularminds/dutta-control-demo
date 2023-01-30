@@ -1,0 +1,10 @@
+
+.options:hover {
+
+    background-color: #8CB4FF;
+}
+
+.sales-btn:target {
+
+    background-color: #0d1b2a;
+}

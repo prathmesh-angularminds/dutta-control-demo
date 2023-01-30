@@ -6,7 +6,7 @@ import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
