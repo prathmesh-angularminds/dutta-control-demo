@@ -1,0 +1,15 @@
+
+main {
+    font-size:0.9rem;
+    color: #212529;
+    /* font-family:  */
+}
+
+
+a{
+    cursor: pointer;
+}
+
+.active-tab-border{
+    border-bottom: 3px #408dfb solid;
+}

@@ -1,7 +1,7 @@
-<div class="w-100 vh-100 d-flex ">
+<div class="w-100  d-flex  ">
     <app-side-bar class="col-2 "></app-side-bar>
-    <div class="col">
-        <app-header></app-header>
+    <div class="col vh-100 overflow-auto">
+        <app-header class="sticky-top"></app-header>
         <router-outlet></router-outlet>
         <app-footer></app-footer>
     </div>

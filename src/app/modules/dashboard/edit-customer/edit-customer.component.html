@@ -1,159 +1,286 @@
-<div class="p-3">
+<main class="p-3">
     <h3 class="py-4  mb-4 border-bottom border-light-subtle">Edit customer</h3>
 
-    <form class="w-50 " [formGroup]="customerForm" (ngSubmit)="submitForm()">
-        <fieldset class="row mb-3">
-            <legend class="col-form-label col-sm-4 pt-0">Customer type</legend>
-            <div class="row col-sm">
-                <div class="col-3 form-check">
-                    <input class="form-check-input" formControlName="customerType" type="radio" name="type"
-                        value="Business" checked>
-                    <label class="form-check-label" for="gridRadios1">
-                        Business
-                    </label>
+    <!-- customer form -->
+    <div>
+        <form class="w-50 " [formGroup]="customerForm" (ngSubmit)="submitCustomerForm()">
+            <fieldset class="row mb-3">
+                <legend class="col-form-label col-sm-4 pt-0">Customer type</legend>
+                <div class="row col-sm">
+                    <div class="col-3 form-check">
+                        <input class="form-check-input" formControlName="customerType" type="radio" value="Business"
+                            checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            Business
+                        </label>
+                    </div>
+                    <div class="col-4 form-check">
+                        <input class="form-check-input" formControlName="customerType" type="radio" value="Individual">
+                        <label class="form-check-label" for="gridRadios2">
+                            Individual
+                        </label>
+                    </div>
                 </div>
-                <div class="col-4 form-check">
-                    <input class="form-check-input" formControlName="customerType" type="radio" name="type"
-                        value="Individual">
-                    <label class="form-check-label" for="gridRadios2">
-                        Individual
-                    </label>
+            </fieldset>
+            <div class="row mb-3 align-items-baseline" formGroupName='primaryContact'>
+                <label for="contact" class="col-sm-4 col-form-label ">Primary contact</label>
+                <div class="row col-sm gap-3 align-items-baseline ">
+                    <select class="col-sm border form-select form-select-sm bg-light rounded-3 text-muted ">
+                        <option value="Mr" selected>Mr.</option>
+                        <option value="Ms" class="">Ms.</option>
+                    </select>
+                    <input type="text" class="form-control form-control-sm col-sm" formControlName="firstName">
+                    <input type="text" class="form-control form-control-sm col-sm" formControlName="lastName">
                 </div>
             </div>
-        </fieldset>
-        <div class="row mb-3" formGroupName="primaryContact">
-            <label for="contact" class="col-sm-4 col-form-label">Primary contact</label>
-            <div class="row col-sm gap-3">
-                <select class="col-sm border form-select bg-light rounded-3 text-muted " formControlName="title" name=""
-                    id="">
-                    <option value="Mr" selected>Mr.</option>
-                    <option value="Ms" class="">Ms.</option>
-                </select>
-                <input type="text" class="form-control col-sm" formControlName="firstName">
-                <input type="text" class="form-control col-sm" formControlName="lastName">
+            <div class="row mb-3 align-items-baseline">
+                <label for="companyName" class="col-sm-4 col-form-label ">Company name</label>
+                <div class="row col-sm-7">
+                    <input type="text" class="form-control form-control-sm text-uppercase "
+                        formControlName="companyName">
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="companyName" class="col-sm-4 col-form-label ">Company name</label>
-            <div class="row col-sm-7">
-                <input type="text" class="form-control text-uppercase " formControlName="companyName">
+            <div class="row mb-3 align-items-baseline">
+                <label for="displayName" class="col-sm-4 col-form-label ">Customer Display <br> name*</label>
+                <div class="col-sm-7 row">
+                    <select class=" form-select form-select-sm  bg-light text-muted"
+                        formControlName="customerDisplayName">
+                        <option value="Company name" selected>Company name</option>
+                        <option value="thopate farms" class="">thopate farms</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="row mb-3 align-items-baseline">
-            <label for="displayName" class="col-sm-4 col-form-label ">Customer Display <br> name*</label>
-            <select class="col-sm form-select border bg-light text-muted" formControlName="customerDisplayName"
-                style="height: 40px" name="" id="">
-                <option value="Company name" selected>Company name</option>
-                <option value="thopate farms" class="">thopate farms</option>
-            </select>
-        </div>
-        <div class="row mb-3">
-            <label for="email" class="col-sm-4 col-form-label ">Customer Email</label>
-            <div class="row col-sm-7">
-                <input type="email" class="form-control " formControlName="email">
+            <div class="row mb-3 align-items-baseline">
+                <label for="email" class="col-sm-4 col-form-label ">Customer Email</label>
+                <div class="row col-sm-7">
+                    <input type="email" class="form-control form-control-sm " formControlName="email">
+                </div>
             </div>
-        </div>
-        <div class="row mb-3" formGroupName="phone">
-            <label for="phone" class="col-sm-4 col-form-label ">Customer Phone</label>
-            <div class="row col-sm-7 gap-3">
-                <input type="tel " class="form-control col-sm " placeholder="Work phone" formControlName="work">
-                <input type="tel" class="form-control  col-sm " placeholder="Mobile" formControlName="mobile">
+            <div class="row mb-3 align-items-baseline" formGroupName="phone">
+                <label for="phone" class="col-sm-4 col-form-label ">Customer Phone</label>
+                <div class="row col-sm-7 gap-3">
+                    <input type="tel " class="form-control form-control-sm col-sm " placeholder="Work phone"
+                        formControlName="work">
+                    <input type="tel" class="form-control form-control-sm  col-sm " placeholder="Mobile"
+                        formControlName="mobile">
+                </div>
             </div>
-        </div>
-        <div class="row mb-3">
-            <label for="website" class="col-sm-4 col-form-label ">Website</label>
-            <div class="row col-sm-7">
-                <input type="text" class="form-control" formControlName="website">
+            <div class="row mb-3 align-items-baseline">
+                <label for="website" class="col-sm-4 col-form-label ">Website</label>
+                <div class="row col-sm-7">
+                    <input type="text" class="form-control form-control-sm" formControlName="website">
+                </div>
             </div>
-        </div>
-        <div>
-            <!-- <button class="btn-primary" type="submit">save</button> -->
-        </div>
-    </form>
-    <div class=" w-75 mt-5 ">
-        <ul class="nav mb-3  border-top border-bottom border-light-subtle py-2">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Other Details</a>
+            <div>
+                <!-- <button class="btn-primary" type="submit">save</button> -->
+            </div>
+        </form>
+    </div>
+
+    <div class=" mt-5" style="width: 80%;">
+        <!-- nav tabs -->
+        <ul class="nav mb-3  border-top border-bottom border-light-subtle">
+            <li class="nav-item" [ngClass]="{'active-tab-border' : currentTab === 'details' }">
+                <a class="nav-link"  (click)="switchTabs('details')">Other Details</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" routerLink="/app/dashboard/address">Active</a>
+            <li class="nav-item" [ngClass]="{'active-tab-border' : currentTab === 'address' }">
+                <a class="nav-link "  (click)="switchTabs('address')">Address</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" routerLink="/app/dashboard/contact-persons">Link</a>
+            <li class="nav-item" [ngClass]="{'active-tab-border' : currentTab === 'contact-person' }">
+                <a class="nav-link" (click)="switchTabs('contact-person')">Contact persons</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link ">Custom fields</a>
+            <li class="nav-item" [ngClass]="{'active-tab-border' : currentTab === 'remarks' }">
+                <a class="nav-link " (click)="switchTabs('remarks')">Remarks</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Reporting Tags</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link ">Remarks</a>
-            </li>
+
         </ul>
-        <div class="tab-content w-50">
-            <div class="hstack gap-3 mb-3">
-                <button class="btn btn-primary ">save</button>
-                <button class="btn btn-secondary ">cancel</button>
+
+        <div class="tab-div ps-3 pe-5">
+            <!-- address tab -->
+            <div class="row gap-5" [ngClass]="currentTab === 'address' ? 'd-flex' : 'd-none'" >
+                <div class="col-sm">
+                    <p class="text-uppercase fw-light text-muted mb-4">billing address</p>
+                    <!--billing address form -->
+                   
+                        <form [formGroup]="billingAddressForm" (ngSubmit)="submitBillingAddressForm()">
+                            <div class="row mb-3">
+                                <label for="companyName" class="col-sm-4 col-form-label ">Attention</label>
+                                <div class=" col-sm">
+                                    <input type="text" class="form-control form-control-sm text-uppercase "
+                                        formControlName="attention">
+                                </div>
+                            </div>
+                            <!-- country selector -->
+                            <!-- <div class="row mb-3 col-sm">
+                            <label for="displayName" class="col-sm-5 col-form-label ">Country/Region</label>
+                            <div class="col-sm">
+                                <select class="form-select form-select-sm" >
+                                    <option ><input type="text"></option>
+                                    <option>India</option>
+                                    <option>Australia</option>
+                                </select>
+                            </div>
+                        </div> -->
+                            <div class="row mb-3">
+                                <label for="AddressLine" class="form-label col-sm-4">Address</label>
+                                <div class="col-sm">
+                                    <textarea class="form-control form-control-sm mb-3 " rows="3" placeholder="Street1"
+                                        formControlName="addressLine"> </textarea>
+                                    <textarea class="form-control form-control-sm " rows="3" placeholder="Street2"
+                                        formControlName="street"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="companyName" class="col-sm-4 col-form-label ">City</label>
+                                <div class=" col-sm">
+                                    <input type="text" class="form-control form-control-sm text-uppercase "
+                                        formControlName="city">
+                                </div>
+                            </div>
+                            <div class="row col-sm mb-3">
+                                <label for="displayName" class="col-sm-4 col-form-label ">State</label>
+                                <div class="col-sm ">
+                                    <select class="form-select form-select-sm bg-light rounded-3 text-muted "
+                                        formControlName="state">
+                                        <option value="Mr">Maharashtra</option>
+                                        <option value="Ms" class="">Karnataka</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="companyName" class="col-sm-4 col-form-label ">Zip code</label>
+                                <div class="col-sm">
+                                    <input type="text" class="form-control form-control-sm text-uppercase "
+                                        formControlName="pin">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="companyName" class="col-sm-4 col-form-label ">Phone</label>
+                                <div class="col-sm">
+                                    <input type="tel" class="form-control form-control-sm text-uppercase "
+                                        formControlName="phone">
+                                </div>
+                            </div>
+                            <!-- <button class="btn btn-primary " type="submit">save</button> -->
+                        </form>
+                   
+                </div>
+                <div class=" col-sm">
+                    <div class="d-flex justify-content-between">
+                        <p class="text-uppercase fw-light text-muted mb-4">shipping address</p>
+                        <a  class="text-primary" (click)="fillShippingForm()">copy billing address</a>
+                    </div>
+
+
+                    <!--shipping address form -->
+                    <form [formGroup]="shippingAddressForm" (ngSubmit)="submitShippingAddressForm()">
+                        <div class="row mb-3">
+                            <label for="companyName" class="col-sm-4 col-form-label ">Attention</label>
+                            <div class=" col-sm">
+                                <input type="text" class="form-control form-control-sm text-uppercase "
+                                    formControlName="attention">
+                            </div>
+                        </div>
+                        <!-- country selector -->
+                        <!-- <div class="row mb-3 col-sm">
+                        <label for="displayName" class="col-sm-5 col-form-label ">Country/Region</label>
+                        <div class="col-sm">
+                            <select class="form-select form-select-sm" >
+                                <option ><input type="text"></option>
+                                <option>India</option>
+                                <option>Australia</option>
+                            </select>
+                        </div>
+                    </div> -->
+                        <div class="row mb-3">
+                            <label for="AddressLine" class="form-label col-sm-4">Address</label>
+                            <div class="col-sm">
+                                <textarea class="form-control form-control-sm mb-3 " rows="3" placeholder="Street1"
+                                    formControlName="addressLine"> </textarea>
+                                <textarea class="form-control form-control-sm " rows="3" placeholder="Street2"
+                                    formControlName="street"></textarea>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="companyName" class="col-sm-4 col-form-label ">City</label>
+                            <div class=" col-sm">
+                                <input type="text" class="form-control form-control-sm text-uppercase "
+                                    formControlName="city">
+                            </div>
+                        </div>
+                        <div class="row col-sm mb-3">
+                            <label for="displayName" class="col-sm-4 col-form-label ">State</label>
+                            <div class="col-sm ">
+                                <select class="form-select form-select-sm bg-light rounded-3 text-muted "
+                                    formControlName="state">
+                                    <option value="Mr">Maharashtra</option>
+                                    <option value="Ms" class="">Karnataka</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="companyName" class="col-sm-4 col-form-label ">Zip code</label>
+                            <div class="col-sm">
+                                <input type="text" class="form-control form-control-sm text-uppercase "
+                                    formControlName="pin">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="companyName" class="col-sm-4 col-form-label ">Phone</label>
+                            <div class="col-sm">
+                                <input type="tel" class="form-control form-control-sm text-uppercase "
+                                    formControlName="phone">
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
-            <form action="
-            ">
-                <div class="row mb-3">
-                    <label for="companyName" class="col-sm-5 col-form-label ">Attention</label>
-                    <div class=" col-sm">
-                        <input type="text" class="form-control text-uppercase " formControlName="companyName">
-                    </div>
-                </div>
-                <div class="row mb-3 col-sm gap-3">
-                    <label for="displayName" class="col-sm-5 col-form-label ">Country/Region</label>
-                    <select class="col-sm form-select  border bg-light text-muted " formControlName="title" name=""
-                        id="">
-                        <option value="Mr" selected>Indian</option>
-                        <option value="Ms" class="">Australia</option>
-                    </select>
-                </div>
-                <div class="row mb-3">
-                    <label for="AddressLine" class="form-label col-sm-4">Address</label>
-                    <div class="col-sm">
-                        <textarea class="form-control mb-3   " rows="3" placeholder="Street1"> </textarea>
-                        <textarea class="form-control " rows="3" placeholder="Street2"></textarea>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="companyName" class="col-sm-4 col-form-label ">City</label>
-                    <div class=" col-sm">
-                        <input type="text" class="form-control text-uppercase " formControlName="companyName">
-                    </div>
-                </div>
-                <div class="row col-sm gap-3 mb-3">
-                    <label for="displayName" class="col-sm-4 col-form-label ">State</label>
-                    <select class="col-sm  form-select row border bg-light rounded-3 text-muted "
-                        formControlName="title" name="" id="">
-                        <option value="Mr" selected>Maharashtra</option>
-                        <option value="Ms" class="">Karnataka</option>
-                    </select>
-                </div>
-                <div class="row mb-3">
-                    <label for="companyName" class="col-sm-4 col-form-label ">Zip code</label>
-                    <div class="row col-sm">
-                        <input type="text" class="form-control text-uppercase " formControlName="companyName">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="companyName" class="col-sm-4 col-form-label ">Phone</label>
-                    <div class="row col-sm">
-                        <input type="tel" class="form-control text-uppercase " formControlName="companyName">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label for="companyName" class="col-sm-4 col-form-label ">Fax</label>
-                    <div class="row col-sm">
-                        <input type="fax" class="form-control text-uppercase " formControlName="companyName">
-                    </div>
-                </div>
-            </form>
+
+            <!-- Other details tab -->
+            <div class=" d-none" [ngClass]="currentTab === 'details' ? 'd-flex' : 'd-none'">details tab</div>
+
+            <!-- contact person tab -->
+            <div class="row" [ngClass]="currentTab === 'contact-person' ? 'd-flex' : 'd-none'">
+                <table class="table table-bordered" [formGroup]="contactPersonsForm">
+                    <thead>
+                        <tr>
+                            <td scope="col">Salutation</td>
+                            <td>First name</td>
+                            <td>Last Name</td>
+                            <td>Email Address</td>
+                            <td>Work phone</td>
+                            <td>Mobile</td>
+                        </tr>
+                    </thead>
+                    <tbody formArrayName="persons">
+                        <tr *ngFor="let control of person.controls; index as i" [formGroupName]="i">
+                            <td> <select formControlName="salutation" class="form-select border-0 form-select-sm">
+                                    <option value="">mr.</option>
+                                    <option value="">mrs.</option>
+                                    <option value="">ms.</option>
+                                    <option value="">miss.</option>
+                                </select> </td>
+                            <td><input class="form-control border-0 form-control-sm" formControlName="firstname"
+                                    type="text"> </td>
+                            <td><input class="form-control border-0 form-control-sm" formControlName="lastname"
+                                    type="text"> </td>
+                            <td><input class="form-control border-0 form-control-sm" formControlName="email"
+                                    type="text"> </td>
+                            <td><input class="form-control border-0 form-control-sm" formControlName="phone"
+                                    type="text"> </td>
+                            <td><input class="form-control border-0 form-control-sm" formControlName="mobile"
+                                    type="text"> </td>
+                        </tr>
+                    </tbody>
+                </table>
+                 <a  class="text-primary" (click)="addNewContactPerson()"> + add contact person</a>
+            </div>
+
+            <!-- Remarks -->
+            <div class=" d-none" [ngClass]="currentTab === 'remarks' ? 'd-flex' : 'd-none'" >Remarks tab</div>
         </div>
     </div>
 
 
-</div>
+</main>
