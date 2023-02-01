@@ -26,9 +26,11 @@
         data-bs-target="#collapseExample1"
         aria-expanded="false"
         aria-controls="collapseExample1"
+        (click)="rotateBtn.activeBtn = 'sales-btn'"
       >
         <i class="fa-solid fa-cart-shopping me-2 ps-2"></i>
         Sales
+        <img [ngClass]="{rotateBtn}" width=16 height=12 src="../../../assets/icons/right-fill.svg"/>
       </div>
       <div class="collapse" id="collapseExample1">
         <div class="card card-body p-0" style="background: inherit">
@@ -51,10 +53,11 @@
         data-bs-target="#collapseExample2"
         aria-expanded="false"
         aria-controls="collapseExample2"
-        click=""
+        (click)="rotateBtn.activeBtn = 'purchase-btn'"
       >
         <i class="fa-solid fa-bag-shopping me-2 ps-2"></i>
         Purchases
+        <img [ngClass]="{rotateBtn}" width=16 height=12 src="../../../assets/icons/right-fill.svg"/>
       </div>
       <div class="collapse" id="collapseExample2">
         <div class="card card-body p-0" style="background: inherit">

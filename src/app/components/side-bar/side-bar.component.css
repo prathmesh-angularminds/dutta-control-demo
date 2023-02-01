@@ -8,3 +8,15 @@
 
     background-color: #0d1b2a;
 }
+
+.sales-btn > img {
+
+    rotate: 90deg;
+
+}
+
+.purchase-btn > img {
+
+    rotate: 90deg;
+
+}
