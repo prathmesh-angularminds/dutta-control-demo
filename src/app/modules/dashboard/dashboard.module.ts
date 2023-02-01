@@ -3,20 +3,19 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { RouterModule } from '@angular/router';
 import { LayoutsModule } from 'src/app/layouts/layouts.module';
-import { ReactiveFormsModule } from '@angular/forms';
-import { EditCustomerModule } from './edit-customer/edit-customer.module';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [EditCustomerComponent],
   imports: [
     CommonModule,
     RouterModule,
-    EditCustomerModule,
     LayoutsModule,
     DashboardRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class DashboardModule { }
